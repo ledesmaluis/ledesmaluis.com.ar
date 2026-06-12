@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luis Ledesma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e0f11;
+      --surface:   #16181c;
+      --border:    #2a2d33;
+      --accent:    #5b8fff;
+      --accent2:   #38e8c4;
+      --text:      #e4e6ea;
+      --muted:     #7a7f8a;
+      --tag-bg:    #1e2330;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(14,15,17,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 60px;
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--text); text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav ul a:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 780px; margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      color: var(--muted); font-size: 1.05rem;
+      max-width: 520px; margin-bottom: 2rem;
+    }
+    .hero-tags { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+    .tag {
+      background: var(--tag-bg); border: 1px solid var(--border);
+      color: var(--muted); font-size: 0.8rem; font-weight: 500;
+      padding: 0.3rem 0.8rem; border-radius: 99px;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      max-width: 780px; margin: 0 auto;
+      padding: 0 2rem;
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .section-divider h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--muted); white-space: nowrap;
+    }
+    .section-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── POSTS GRID ── */
+    .posts {
+      max-width: 780px; margin: 0 auto;
+      padding: 0 2rem 5rem;
+      display: grid; gap: 1.2rem;
+    }
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      display: grid; grid-template-columns: 1fr auto;
+      align-items: start; gap: 1rem;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .post-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .post-card:hover .post-arrow { color: var(--accent); }
+    .post-cat {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent2);
+      margin-bottom: 0.4rem;
+    }
+    .post-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 600;
+      letter-spacing: -0.01em; line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+    .post-card p {
+      font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+    }
+    .post-meta {
+      font-size: 0.75rem; color: var(--muted);
+      margin-top: 0.9rem;
+    }
+    .post-arrow {
+      color: var(--border); font-size: 1.2rem;
+      transition: color 0.2s; margin-top: 0.2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.82rem; color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .hero, .posts, .section-divider { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .post-card { grid-template-columns: 1fr; }
+      .post-arrow { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">Luis<span>.</span></a>
+    <ul>
+      <li><a href="#posts">Blog</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="sobre-mi">
+    <p class="hero-eyebrow">Blog personal</p>
+    <h1>Luis <em>Ledesma</em></h1>
+    <p>Escribo sobre el lugar donde vivo, los deportes que practico y todo lo que me apasiona del día a día.</p>
+    <div class="hero-tags">
+      <span class="tag">🏔️ Vida local</span>
+      <span class="tag">🏃 Deportes</span>
+      <span class="tag">📍 Argentina</span>
+    </div>
+  </header>
+
+  <div class="section-divider">
+    <h2>Últimas entradas</h2>
+  </div>
+
+  <main class="posts" id="posts">
+
+    <a class="post-card" href="#">
+      <div>
+        <p class="post-cat">Vida local</p>
+        <h3>Mi rincón favorito del mundo</h3>
+        <p>Una introducción al lugar donde vivo: sus paisajes, su gente y por qué elegí quedarme acá.</p>
+        <p class="post-meta">Junio 2025 · 4 min de lectura</p>
+      </div>
+      <span class="post-arrow">→</span>
+    </a>
+
+    <a class="post-card" href="#">
+      <div>
+        <p class="post-cat">Deportes</p>
+        <h3>Por qué el deporte cambió mi rutina</h3>
+        <p>Cómo empecé a practicar y lo que aprendí en el camino sobre constancia y superación.</p>
+        <p class="post-meta">Mayo 2025 · 5 min de lectura</p>
+      </div>
+      <span class="post-arrow">→</span>
+    </a>
+
+    <a class="post-card" href="#">
+      <div>
+        <p class="post-cat">Vida local</p>
+        <h3>Las temporadas donde vivo</h3>
+        <p>Cómo cambia el paisaje y la vida cotidiana según la época del año en mi zona.</p>
+        <p class="post-meta">Abril 2025 · 3 min de lectura</p>
+      </div>
+      <span class="post-arrow">→</span>
+    </a>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Luis Ledesma · <a href="https://ledesmaluis.com.ar">ledesmaluis.com.ar</a></p>
+  </footer>
+
+</body>
+</html>
