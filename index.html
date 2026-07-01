@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -165,6 +166,38 @@
       transition: color 0.2s; margin-top: 0.2rem;
     }
 
+    /* ── GALERÍA MTB ── */
+    .gallery {
+      max-width: 780px; margin: 0 auto;
+      padding: 0 2rem 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .gallery-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .gallery-item:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
@@ -176,9 +209,10 @@
 
     @media (max-width: 600px) {
       nav { padding: 0 1.2rem; }
-      .posts, .section-divider { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .posts, .section-divider, .gallery { padding-left: 1.2rem; padding-right: 1.2rem; }
       .post-card { grid-template-columns: 1fr; }
       .post-arrow { display: none; }
+      .gallery { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -188,6 +222,7 @@
     <a class="nav-logo" href="#">Luis<span>.</span></a>
     <ul>
       <li><a href="#posts">Blog</a></li>
+      <li><a href="#galeria">Galería MTB</a></li>
       <li><a href="#sobre-mi">Sobre mí</a></li>
     </ul>
   </nav>
@@ -244,6 +279,27 @@
     </a>
 
   </main>
+
+  <!-- ── GALERÍA MTB ── -->
+  <div class="section-divider" id="galeria">
+    <h2>🚵 Galería MTB</h2>
+  </div>
+
+  <section class="gallery">
+
+    <div class="gallery-item">
+      <img src="laguna_blanca_2026.JPG" alt="Laguna Blanca Junio 2026" />
+      <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
+    </div>
+
+    <!-- Para agregar más fotos, copiá este bloque:
+    <div class="gallery-item">
+      <img src="NOMBRE_FOTO.jpg" alt="Descripción" />
+      <p class="gallery-caption">Descripción · Fecha</p>
+    </div>
+    -->
+
+  </section>
 
   <footer>
     <p>© 2025 Luis Ledesma · <a href="https://ledesmaluis.com.ar">ledesmaluis.com.ar</a></p>
