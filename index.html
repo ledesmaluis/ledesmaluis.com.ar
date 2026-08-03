@@ -1,11 +1,11 @@
-
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luis Ledesma</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -229,14 +229,10 @@
 
   <header class="hero" id="sobre-mi">
     <div class="hero-inner">
-      <p class="hero-eyebrow">Blog personal</p>
-      <h1>Luis <em>Ledesma</em></h1>
-      <p>Escribo sobre el lugar donde vivo, los deportes que practico y todo lo que me apasiona del día a día.</p>
-      <div class="hero-tags">
-        <span class="tag">🏔️ Vida local</span>
-        <span class="tag">🏃 Deportes</span>
-        <span class="tag">📍 Argentina</span>
-      </div>
+      <p class="hero-eyebrow"></p>
+      <h1></h1>
+      <p></p>
+      <div class="hero-tags"></div>
     </div>
   </header>
 
@@ -245,89 +241,35 @@
   </div>
 
   <main class="posts" id="posts">
-
-    <a class="post-card" href="#">
-      <div>
-        <p class="post-cat">Vida local</p>
-        <h3>Mi rincón favorito del mundo</h3>
-        <p>Una introducción al lugar donde vivo: sus paisajes, su gente y por qué elegí quedarme acá.</p>
-        <p class="post-meta">Junio 2025 · 4 min de lectura</p>
-      </div>
-      <span class="post-arrow">→</span>
-    </a>
-
-    <a class="post-card" href="#">
-      <div>
-        <img src="mtb_laguna_blanca.jpg" alt="MTB Laguna Blanca" style="width:100%;border-radius:8px;margin-bottom:0.5rem;" />
-        <p style="font-size:0.75rem;color:var(--accent2);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem;">🚵 Próxima carrera MTB</p>
-        <p class="post-cat">Deportes</p>
-        <h3>Por qué el deporte cambió mi rutina</h3>
-        <p>Cómo empecé a practicar y lo que aprendí en el camino sobre constancia y superación.</p>
-        <p class="post-meta">Mayo 2025 · 5 min de lectura</p>
-      </div>
-      <span class="post-arrow">→</span>
-    </a>
-
-    <a class="post-card" href="#">
-      <div>
-        <p class="post-cat">Vida local</p>
-        <h3>Las temporadas donde vivo</h3>
-        <p>Cómo cambia el paisaje y la vida cotidiana según la época del año en mi zona.</p>
-        <p class="post-meta">Abril 2025 · 3 min de lectura</p>
-      </div>
-      <span class="post-arrow">→</span>
-    </a>
-
+    <!-- Los posts se generan automáticamente desde content.json -->
   </main>
 
   <!-- ── GALERÍA MTB ── -->
   <div class="section-divider" id="galeria">
     <h2>🚵 Galería MTB</h2>
-  
+  </div>
 
   <section class="gallery">
-<section class="gallery">
-
-<div class="gallery-item">
-  <img src="lag_blanca_01.JPG" alt="Laguna Blanca Junio 2026" />
-  <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
-</div>
-<div class="gallery-item">
-  <img src="lag_blanca_03.JPG" alt="Laguna Blanca Junio 2026" />
-  <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
-</div>
-<div class="gallery-item">
-  <img src="lag_blanca_05.JPG" alt="Laguna Blanca Junio 2026" />
-  <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
-</div>
-<div class="gallery-item">
-  <img src="lag_blanca_07.JPG" alt="Laguna Blanca Junio 2026" />
-  <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
-</div>
-<div class="gallery-item">
-  <img src="lag_blanca_08.jpg" alt="Laguna Blanca Junio 2026" />
-  <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
-</div>
-<div class="gallery-item">
-  <img src="lag_blanca_10.jpg" alt="Laguna Blanca Junio 2026" />
-  <p class="gallery-caption">Laguna Blanca · Junio 2026</p>
-</div>
-
-<!-- Para agregar más fotos, copiá este bloque:
-<div class="gallery-item">
-  <img src="NOMBRE_FOTO.jpg" alt="Descripción" />
-  <p class="gallery-caption">Descripción · Fecha</p>
-</div>
--->
-</section>
-    
-
+    <!-- Las fotos se generan automáticamente desde content.json -->
   </section>
 
   <footer>
     <p>© 2025 Luis Ledesma · <a href="https://ledesmaluis.com.ar">ledesmaluis.com.ar</a></p>
   </footer>
 
+  <script src="script.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
+
 
