@@ -1,0 +1,46 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: ""
+public_folder: ""
+
+collections:
+  - name: "content"
+    label: "Contenido del sitio"
+    files:
+      - name: "site"
+        label: "Sitio"
+        file: "content.json"
+        fields:
+          - label: "Inicio (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño arriba del título", name: "eyebrow", widget: "string" }
+              - { label: "Título (parte normal)", name: "title_normal", widget: "string" }
+              - { label: "Título (parte en cursiva)", name: "title_em", widget: "string" }
+              - { label: "Descripción", name: "description", widget: "text" }
+              - label: "Etiquetas (tags)"
+                name: "tags"
+                widget: "list"
+                field: { label: "Etiqueta", name: "tag", widget: "string" }
+
+          - label: "Posts del blog"
+            name: "posts"
+            widget: "list"
+            fields:
+              - { label: "Categoría", name: "category", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descripción", name: "description", widget: "text" }
+              - { label: "Meta (fecha · tiempo de lectura)", name: "meta", widget: "string" }
+              - { label: "Imagen (nombre de archivo, opcional)", name: "image", widget: "string", required: false }
+              - { label: "Destacado (opcional, ej: 🚵 Próxima carrera)", name: "highlight", widget: "string", required: false }
+
+          - label: "Galería MTB"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Foto", name: "image", widget: "image" }
+              - { label: "Descripción", name: "caption", widget: "string" }
