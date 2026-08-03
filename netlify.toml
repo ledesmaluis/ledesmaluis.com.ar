@@ -1,0 +1,33 @@
+[build]
+  # Directorio donde estan los archivos publicados (index.html, css, imagenes, etc)
+  # Si tus archivos estan en la raiz del repo, dejalo como esta.
+  # Si estan en una carpeta "docs" o "public", cambia "." por "docs" o "public"
+  publish = "."
+
+  # No hace falta comando de build porque el sitio es HTML estatico
+  # (sin Jekyll, gracias al archivo .nojekyll que ya tenes)
+  command = ""
+
+[build.environment]
+  # Evita que Netlify intente procesar el sitio como Jekyll
+  JEKYLL_ENV = "production"
+
+# Redirige automaticamente a HTTPS y a la version sin "www"
+[[redirects]]
+  from = "http://ledesmaluis.com.ar/*"
+  to = "https://ledesmaluis.com.ar/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ledesmaluis.com.ar/*"
+  to = "https://ledesmaluis.com.ar/:splat"
+  status = 301
+  force = true
+
+# Configuracion de headers basicos (opcional, mejora seguridad)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
