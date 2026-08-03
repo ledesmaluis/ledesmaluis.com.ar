@@ -1,10 +1,14 @@
 {
   "hero": {
     "eyebrow": "Blog personal",
-    "title_normal": "Luis",
+    "title_normal": "Luis Ledesma",
     "title_em": "Ledesma",
-    "description": "Escribo sobre el lugar donde vivo, los deportes que practico y todo lo que me apasiona del día a día.",
-    "tags": ["🏔️ Vida local", "🏃 Deportes", "📍 Argentina"]
+    "description": "Mi ciudad, al Oeste de la Provincia de Formosa.",
+    "tags": [
+      "🏔️ Vida local",
+      "🏃 Deportes",
+      "📍 Argentina"
+    ]
   },
   "posts": [
     {
@@ -33,11 +37,29 @@
     }
   ],
   "gallery": [
-    { "image": "lag_blanca_01.JPG", "caption": "Laguna Blanca · Junio 2026" },
-    { "image": "lag_blanca_03.JPG", "caption": "Laguna Blanca · Junio 2026" },
-    { "image": "lag_blanca_05.JPG", "caption": "Laguna Blanca · Junio 2026" },
-    { "image": "lag_blanca_07.JPG", "caption": "Laguna Blanca · Junio 2026" },
-    { "image": "lag_blanca_08.jpg", "caption": "Laguna Blanca · Junio 2026" },
-    { "image": "lag_blanca_10.jpg", "caption": "Laguna Blanca · Junio 2026" }
+    {
+      "image": "lag_blanca_01.JPG",
+      "caption": "Laguna Blanca · Junio 2026"
+    },
+    {
+      "image": "lag_blanca_03.JPG",
+      "caption": "Laguna Blanca · Junio 2026"
+    },
+    {
+      "image": "lag_blanca_05.JPG",
+      "caption": "Laguna Blanca · Junio 2026"
+    },
+    {
+      "image": "lag_blanca_07.JPG",
+      "caption": "Laguna Blanca · Junio 2026"
+    },
+    {
+      "image": "lag_blanca_08.jpg",
+      "caption": "Laguna Blanca · Junio 2026"
+    },
+    {
+      "image": "lag_blanca_10.jpg",
+      "caption": "Laguna Blanca · Junio 2026"
+    }
   ]
 }
